@@ -1,9 +1,19 @@
 import React from 'react';
+import {
+  Container, Title, Brand, Price,
+} from './styles';
 
-import { View, Text } from 'react-native';
-
-// import { Container } from './styles';
-
-const Product = () => <View><Text>A product</Text></View>;
+const Product = () => (
+  <Container>
+    <Title>Title</Title>
+    <Brand>Brand</Brand>
+    <Price>
+      {(50).toLocaleString('pt-BR', {
+        style: 'currency',
+        currency: 'BRL',
+      })}
+    </Price>
+  </Container>
+);
 
 export default Product;

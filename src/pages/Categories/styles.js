@@ -23,6 +23,6 @@ export const Categories = styled.FlatList.attrs({
 export const Products = styled.FlatList.attrs({
   numColumns: 2,
 })`
-  padding-top: ${metrics.baseMargin}px;
+  padding: ${metrics.baseMargin}px;
   background: ${colors.lighter}
 `;

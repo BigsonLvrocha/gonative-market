@@ -26,7 +26,7 @@ export default class index extends Component {
         </CategoriesContainer>
         <Products
           data={products}
-          renderItem={() => <Product />}
+          renderItem={({ item }) => <Product product={item} />}
           keyExtractor={item => String(item.id)}
         />
         <Bottom />
