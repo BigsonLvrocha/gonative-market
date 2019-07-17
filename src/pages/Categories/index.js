@@ -20,7 +20,7 @@ export default class index extends Component {
         <CategoriesContainer>
           <Categories
             data={data}
-            renderItem={() => <Category />}
+            renderItem={({ item }) => <Category category={item} />}
             keyExtractor={item => String(item.id)}
           />
         </CategoriesContainer>

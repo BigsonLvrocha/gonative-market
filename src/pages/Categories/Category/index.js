@@ -2,10 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Container, Title } from './styles';
 
-const Category = ({ active }) => <Container active={active}><Title>A category</Title></Container>;
+const Category = ({ active, category }) => (
+  <Container active={active}>
+    <Title>{category.title}</Title>
+  </Container>
+);
 
 Category.propTypes = {
   active: PropTypes.bool,
+  category: PropTypes.shape({
+    title: PropTypes.string,
+  }).isRequired,
 };
 
 Category.defaultProps = {
