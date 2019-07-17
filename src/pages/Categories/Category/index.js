@@ -1,8 +1,15 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import PropTypes from 'prop-types';
+import { Container, Title } from './styles';
 
-// import { Container } from './styles';
+const Category = ({ active }) => <Container active={active}><Title>A category</Title></Container>;
 
-const Category = () => <View><Text>A category</Text></View>;
+Category.propTypes = {
+  active: PropTypes.bool,
+};
+
+Category.defaultProps = {
+  active: false,
+};
 
 export default Category;

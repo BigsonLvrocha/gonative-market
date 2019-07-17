@@ -10,19 +10,19 @@ export const Container = styled.View`
 `;
 
 export const CategoriesContainer = styled.View`
-  height: 60px;
+  height: 45px;
 `;
 
 export const Categories = styled.FlatList.attrs({
   horizontal: true,
 })`
   background-color: ${colors.primary};
-  padding: 0 ${metrics.basePadding}px;
   height: 50px;
 `;
 
 export const Products = styled.FlatList.attrs({
   numColumns: 2,
 })`
+  padding-top: ${metrics.baseMargin}px;
   background: ${colors.lighter}
 `;
