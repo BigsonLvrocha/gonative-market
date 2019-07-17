@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { withNavigation } from 'react-navigation';
 import {
   Container, Title, Brand, Price, Image,
 } from './styles';
 
-const Product = ({ product }) => (
-  <Container>
+const Product = ({ product, navigation }) => (
+  <Container onPress={() => navigation.navigate('Details', { product })}>
     <Image source={{ uri: product.image }} />
     <Title>{product.name}</Title>
     <Brand>{product.brand}</Brand>
@@ -25,6 +26,9 @@ Product.propTypes = {
     price: PropTypes.number,
     image: PropTypes.string,
   }).isRequired,
+  navigation: PropTypes.shape({
+    navigate: PropTypes.func,
+  }).isRequired,
 };
 
-export default Product;
+export default withNavigation(Product);

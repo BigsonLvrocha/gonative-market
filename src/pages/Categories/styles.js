@@ -6,7 +6,6 @@ export const Container = styled.View`
   margin: 0;
   padding: 0;
   flex: 1;
-  height: ${metrics.screenHeight}px;
 `;
 
 export const CategoriesContainer = styled.View`
