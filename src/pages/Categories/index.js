@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
+import { Container } from './styles';
+import Header from '~/components/Header';
 
 export default class index extends Component {
   componentDidMount() {
@@ -8,9 +9,9 @@ export default class index extends Component {
 
   render() {
     return (
-      <View>
-        <Text> textInComponent </Text>
-      </View>
+      <Container>
+        <Header title="GoCommerce" />
+      </Container>
     );
   }
 }
