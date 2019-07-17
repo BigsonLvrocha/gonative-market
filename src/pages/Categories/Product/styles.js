@@ -16,6 +16,7 @@ export const Title = styled.Text`
   font-weight: bold;
   font-size: 16px;
   color: ${colors.black};
+  margin-top: ${metrics.baseMargin}px;
 `;
 
 export const Brand = styled.Text`
@@ -27,4 +28,9 @@ export const Price = styled.Text`
   font-size: 18px;
   margin-top: ${metrics.baseMargin / 2}px;
   font-weight: bold;
+`;
+
+export const Image = styled.Image`
+  width: ${(metrics.screenWidth - 4 * metrics.baseMargin) / 2 - 2 * metrics.baseMargin};
+  height: 350;
 `;
