@@ -8,7 +8,7 @@ import CategoryActions from '~/store/ducks/category';
 import Category from './Category';
 import Product from './Product';
 import {
-  Container, CategoriesList, CategoriesContainer, Products,
+  Container, CategoriesList, CategoriesContainer, Products, Loading, ProductsContainer,
 } from './styles';
 
 class Categories extends Component {
@@ -38,21 +38,33 @@ class Categories extends Component {
       <Container>
         <Header title="GoCommerce" />
         <CategoriesContainer>
-          <CategoriesList
-            data={category.data}
-            renderItem={({ item }) => (
-              <Category
-                category={item}
-              />
-            )}
-            keyExtractor={item => String(item.id)}
-          />
+          {
+          category.isLoading ? (
+            <Loading />
+          ) : (
+            <CategoriesList
+              data={category.data}
+              renderItem={({ item }) => (
+                <Category
+                  category={item}
+                />
+              )}
+              keyExtractor={item => String(item.id)}
+            />
+          )
+          }
         </CategoriesContainer>
-        <Products
-          data={product.data}
-          renderItem={({ item }) => <Product product={item} />}
-          keyExtractor={item => String(item.id)}
-        />
+        <ProductsContainer>
+          {product.isLoading ? (
+            <Loading />
+          ) : (
+            <Products
+              data={product.data}
+              renderItem={({ item }) => <Product product={item} />}
+              keyExtractor={item => String(item.id)}
+            />
+          )}
+        </ProductsContainer>
         <Bottom />
       </Container>
     );

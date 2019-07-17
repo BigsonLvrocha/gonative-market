@@ -11,18 +11,32 @@ export const Container = styled.View`
 
 export const CategoriesContainer = styled.View`
   height: 45px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: ${colors.primary};
 `;
 
 export const CategoriesList = styled.FlatList.attrs({
   horizontal: true,
 })`
-  background-color: ${colors.primary};
   height: 50px;
+`;
+
+export const ProductsContainer = styled.View`
+  background: ${colors.lighter};
+  flex: 1;
+  justify-content: center;
+  align-items: stretch;
 `;
 
 export const Products = styled.FlatList.attrs({
   numColumns: 2,
 })`
   padding: ${metrics.baseMargin}px;
-  background: ${colors.lighter}
+  background: ${colors.lighter};
 `;
+
+export const Loading = styled.ActivityIndicator.attrs({
+  size: 'large',
+})``;
