@@ -13,7 +13,7 @@ export const CategoriesContainer = styled.View`
   height: 45px;
 `;
 
-export const Categories = styled.FlatList.attrs({
+export const CategoriesList = styled.FlatList.attrs({
   horizontal: true,
 })`
   background-color: ${colors.primary};
