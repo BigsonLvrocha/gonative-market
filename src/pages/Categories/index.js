@@ -18,7 +18,6 @@ class Categories extends Component {
         id: PropTypes.number,
         title: PropTypes.string,
       })),
-      activeCategory: PropTypes.number,
     }).isRequired,
     fetchCategoryRequest: PropTypes.func.isRequired,
     product: PropTypes.shape({
@@ -44,7 +43,6 @@ class Categories extends Component {
             renderItem={({ item }) => (
               <Category
                 category={item}
-                active={item.id === category.activeCategory}
               />
             )}
             keyExtractor={item => String(item.id)}
