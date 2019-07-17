@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
 import { metrics, colors } from '~/styles';
 
-export const Container = styled.View`
+export const Container = styled.TouchableOpacity`
   margin: ${metrics.baseMargin / 2}px;
   border-radius: ${metrics.baseRadius}px;
   padding: ${metrics.baseMargin}px;

@@ -47,4 +47,11 @@ export const products = [
     image: 'https://t-static.dafiti.com.br/aC9871vKWfL3bDgbhLx5sFLa7xs=/fit-in/427x620/dafitistatic-a.akamaihd.net%2fp%2fred-bull-camiseta-red-bull-logo-azul-0272-7714033-1-product.jpg',
     price: 54.99,
   },
+  {
+    id: 4,
+    name: 'Camiseta Primo Tipper',
+    brand: 'Rip Curl',
+    image: 'https://t-static.dafiti.com.br/weG0u9eKZ4KBV-G0XFOQ5hoY4eI=/fit-in/427x620/dafitistatic-a.akamaihd.net%2fp%2frip-curl-camiseta-rip-curl-primo-tipper-preto-8138-3441052-1-product.jpg',
+    price: 39.99,
+  },
 ];
