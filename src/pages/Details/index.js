@@ -13,6 +13,7 @@ import {
   Price,
   AddToCartButtom,
   AddToCartButtonText,
+  Avatar,
 } from './styles';
 
 const Details = ({ navigation }) => {
@@ -22,6 +23,7 @@ const Details = ({ navigation }) => {
       <Header title="Detalhes do produto" backButton />
       <ContentContainer>
         <ContentCard>
+          <Avatar source={{ uri: product.image }} />
           <TextContainer>
             <DescriptionContainer>
               <Title>{product.name}</Title>

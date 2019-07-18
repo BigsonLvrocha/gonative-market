@@ -26,6 +26,7 @@ export const ContentCard = styled.View`
 `;
 
 export const TextContainer = styled.View`
+  margin-top: ${metrics.basePadding}px;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
@@ -61,4 +62,9 @@ export const AddToCartButtom = styled.TouchableOpacity`
 export const AddToCartButtonText = styled.Text`
   color: ${colors.white};
   text-align: center;
+`;
+
+export const Avatar = styled.Image`
+  height: 500px;
+  margin: 0 70px;
 `;
