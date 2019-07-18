@@ -1,3 +1,5 @@
+import Immutable from 'seamless-immutable';
+
 /**
  * Types
  */
@@ -13,38 +15,34 @@ export const Types = {
  * reducer
  */
 
-const INITIAL_STATE = {
+const INITIAL_STATE = Immutable({
   data: [],
   isLoading: false,
   error: false,
   activeCategory: -1,
-};
+});
 
 export function reducer(state = INITIAL_STATE, action) {
   switch (action.type) {
     case Types.FETCH_REQUEST:
-      return {
-        ...state,
+      return state.merge({
         isLoading: true,
-      };
+      });
     case Types.FETCH_SUCCESS:
-      return {
-        ...state,
+      return state.merge({
         isLoading: false,
         data: action.payload.data,
         error: false,
-      };
+      });
     case Types.FETCH_FAILURE:
-      return {
-        ...state,
+      return state.merge({
         isLoading: false,
         error: action.payload.error,
-      };
+      });
     case Types.SET_CATEGORY:
-      return {
-        ...state,
+      return state.merge({
         activeCategory: action.payload.category,
-      };
+      });
     default:
       return state;
   }
