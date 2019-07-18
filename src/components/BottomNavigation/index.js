@@ -5,10 +5,10 @@ import { Container, Button, ButtonIcon } from './styles';
 
 const BottomNavigation = ({ navigation }) => (
   <Container>
-    <Button>
+    <Button onPress={() => navigation.navigate('Categories')}>
       <ButtonIcon name="home" active={navigation.state.routeName === 'Categories' || navigation.state.routeName === 'Details'} />
     </Button>
-    <Button>
+    <Button onPress={() => navigation.navigate('Cart')}>
       <ButtonIcon name="cart" active={navigation.state.routeName === 'Cart'} />
     </Button>
   </Container>

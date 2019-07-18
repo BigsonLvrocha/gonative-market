@@ -57,6 +57,7 @@ export const AddToCartButtom = styled.TouchableOpacity`
   padding: ${metrics.basePadding}px;
   background: ${colors.secundary};
   margin-top: ${metrics.baseMargin}px;
+  border-radius: ${metrics.baseRadius}px;
 `;
 
 export const AddToCartButtonText = styled.Text`
