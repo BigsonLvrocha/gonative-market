@@ -5,6 +5,8 @@ import { colors, metrics } from '~/styles';
 export const Container = styled.View`
   flex-direction: row;
   justify-content: space-between;
+  border-top-color: ${colors.lighter};
+  border-top-width: 1px;
 `;
 
 export const Button = styled.TouchableOpacity`

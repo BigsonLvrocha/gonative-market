@@ -32,7 +32,7 @@ export const ProductsContainer = styled.View`
 export const Products = styled.FlatList.attrs({
   numColumns: 2,
 })`
-  padding: ${metrics.baseMargin}px;
+  padding: 0 ${metrics.baseMargin}px;
   background: ${colors.lighter};
 `;
 

@@ -19,6 +19,7 @@ BottomNavigation.propTypes = {
     state: PropTypes.shape({
       routeName: PropTypes.string,
     }),
+    navigate: PropTypes.func,
   }).isRequired,
 };
 

@@ -19,6 +19,7 @@ export const ItemsList = styled.FlatList``;
 
 export const TotalContainer = styled.View`
   padding: ${metrics.basePadding}px;
+  background: ${colors.white};
 `;
 
 export const Subtotal = styled.Text`

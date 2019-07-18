@@ -1,7 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import Header from '~/components/Header';
 import Bottom from '~/components/BottomNavigation';
+import CartActions from '~/store/ducks/cart';
 import {
   Container,
   ContentCard,
@@ -16,7 +19,12 @@ import {
   Avatar,
 } from './styles';
 
-const Details = ({ navigation }) => {
+function handleCartAdd(product, navigation, addToCart) {
+  navigation.navigate('Cart');
+  addToCart(product);
+}
+
+const Details = ({ navigation, addToCart }) => {
   const product = navigation.getParam('product');
   return (
     <Container>
@@ -31,7 +39,7 @@ const Details = ({ navigation }) => {
             </DescriptionContainer>
             <Price>{product.price}</Price>
           </TextContainer>
-          <AddToCartButtom>
+          <AddToCartButtom onPress={() => handleCartAdd(product, navigation, addToCart)}>
             <AddToCartButtonText>Adicionar ao carrinho</AddToCartButtonText>
           </AddToCartButtom>
         </ContentCard>
@@ -45,6 +53,11 @@ Details.propTypes = {
   navigation: PropTypes.shape({
     getParam: PropTypes.func,
   }).isRequired,
+  addToCart: PropTypes.func.isRequired,
 };
 
-export default Details;
+const mapStateToProps = () => ({});
+
+const mapDispatchToProps = dispatch => bindActionCreators(CartActions, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(Details);

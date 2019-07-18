@@ -32,7 +32,7 @@ export function reducer(state = INITIAL_STATE, action) {
       });
     case Types.REMOVE:
       return state.merge({
-        data: state.data.filter(item => item.id !== action.payload.itemId),
+        data: state.data.filter(item => item.id !== action.payload.id),
       });
     default:
       return state;
@@ -42,3 +42,25 @@ export function reducer(state = INITIAL_STATE, action) {
 /**
  * Actions
  */
+
+export default {
+  addToCart: product => ({
+    type: Types.ADD,
+    payload: {
+      product,
+    },
+  }),
+  removeFromCart: id => ({
+    type: Types.REMOVE,
+    payload: {
+      id,
+    },
+  }),
+  updateCartItemAmount: (id, amount) => ({
+    type: Types.UPDATE_AMOUNT,
+    payload: {
+      id,
+      amount,
+    },
+  }),
+};
