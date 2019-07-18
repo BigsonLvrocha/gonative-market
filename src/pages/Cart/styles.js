@@ -15,7 +15,9 @@ export const ContentContainer = styled.View`
   align-items: stretch;
 `;
 
-export const ItemsList = styled.FlatList``;
+export const ItemsList = styled.FlatList`
+  margin-top: ${metrics.baseMargin}px;
+`;
 
 export const TotalContainer = styled.View`
   padding: ${metrics.basePadding}px;
@@ -31,6 +33,6 @@ export const TotalPrice = styled.Text`
   color: ${colors.primary};
   font-weight: bold;
   font-size: 36px;
-  margin-top: ${metrics.basePadding}px;
+  margin-top: ${metrics.baseMargin}px;
   text-align: center;
 `;

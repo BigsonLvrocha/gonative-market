@@ -19,6 +19,9 @@ const INITIAL_STATE = Immutable({
 });
 
 export function reducer(state = INITIAL_STATE, action) {
+  let currentItem = null;
+  let before;
+  let after;
   switch (action.type) {
     case Types.ADD:
       return state.merge({
@@ -33,6 +36,23 @@ export function reducer(state = INITIAL_STATE, action) {
     case Types.REMOVE:
       return state.merge({
         data: state.data.filter(item => item.id !== action.payload.id),
+      });
+    case Types.UPDATE_AMOUNT:
+      currentItem = state.data.findIndex(item => item.id === action.payload.id);
+      if (currentItem === -1) {
+        return state;
+      }
+      before = currentItem === 0 ? [] : state.data.slice(0, currentItem);
+      after = currentItem === state.data.length - 1
+        ? []
+        : state.data.slice(currentItem + 1);
+      return state.merge({
+        data: [
+          ...before, {
+            ...state.data[currentItem],
+            amount: action.payload.amount,
+          }, ...after,
+        ],
       });
     default:
       return state;
